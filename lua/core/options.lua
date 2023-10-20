@@ -31,6 +31,7 @@ opt.splitright = true
 opt.splitbelow = true
 
 -- 搜索
+opt.incsearch = true
 opt.ignorecase = true   -- 搜索时忽略大小写
 opt.smartcase = true    -- 若搜索内容中有大写字母，则不再忽略大小写
 
