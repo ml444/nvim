@@ -14,7 +14,7 @@ opt.expandtab = true
 opt.autoindent = true
 
 -- 防止包裹
-opt.wrap = false
+opt.wrap = true     -- 字符串自动换行
 
 -- 光标行
 opt.cursorline = true
