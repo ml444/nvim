@@ -2,6 +2,8 @@ require('go').setup({
     lsp_cfg = true,     -- 启用LSP配置
 })
 
+-- 重新加载新import依赖命令:LspRestart
+
 local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
@@ -21,7 +23,7 @@ vim.api.nvim_set_keymap('n', 'gi', ':lua vim.lsp.buf.implementation()<CR>', { no
 -- vim.api.nvim_set_keymap('n', '<Leader>]', ':lua vim.lsp.util.jump_forward()<CR>', { noremap = true, silent = true })      --:call GoForward()<CR>
 
 
-vim.api.nvim_set_keymap('n', '<S-F6>', ':lua vim.lsp.buf.rename()<CR>', { noremap = true, silent = false })      --
+vim.api.nvim_set_keymap('n', '<Leader>r', ':lua vim.lsp.buf.rename()<CR>', { noremap = true, silent = false })      --
 vim.api.nvim_set_keymap('n', '<C-l>', ':lua vim.lsp.buf.format()<CR>', { noremap = true, silent = false})      --
 vim.api.nvim_set_keymap('n', '<Tab>', ':lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = false })      --
 vim.api.nvim_set_keymap('n', '<C-[>', ':lua vim.lsp.buf.incoming_calls()<CR>', { noremap = true, silent = false })      --
