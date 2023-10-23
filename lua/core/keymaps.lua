@@ -32,7 +32,7 @@ keymap.set("n", "<leader>nh", ":nohl<CR>")
 keymap.set("n", "<leader>]", ":bnext<CR>")
 keymap.set("n", "<leader>[", ":bprevious<CR>")
 
--- ---------- 插件 ---------- ---
+-- =========== 插件 =========== 
 -- nvim-tree
 keymap.set("n", "<F6>", ":NvimTreeToggle<CR>")
 
@@ -40,4 +40,19 @@ keymap.set('n', '<leader>0', '<CMD>tablast<CR>')
 keymap.set('n', '<leader>dd', ':%bdelete<CR>')
 
 -- keymap.set("n", "<leader>t", ":terminal<CR>i")
+
+-- =========== LSP ===========
+vim.api.nvim_set_keymap('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })      --:call GoDef()<CR>
+vim.api.nvim_set_keymap('n', 'gs', ':lua vim.lsp.buf.declaration()<CR>', { noremap = true, silent = true })      --:call GoDecl()<CR>   查看函数声明或实现的位置
+vim.api.nvim_set_keymap('n', 'gr', ':lua vim.lsp.buf.references()<CR>', { noremap = true, silent = true })          --:call GoRef()<CR>     查看类型或函数的所有引用
+-- vim.api.nvim_set_keymap('n', 'gr', ':lua vim.lsp.buf.clear_references()<CR>', { noremap = true, silent = true })          --Removes document highlights from current buffer.
+vim.api.nvim_set_keymap('n', 'gt', ':lua vim.lsp.buf.type_definition()<CR>', { noremap = true, silent = true })      --:call GoTypeDef()<CR>    跳转到类型定义
+vim.api.nvim_set_keymap('n', 'gf', ':lua vim.lsp.buf.implementation()<CR>', { noremap = true, silent = false })      --
+-- vim.api.nvim_set_keymap('n', '<Leader>[', ':lua vim.lsp.util.jump_back()<CR>', { noremap = true, silent = true })      --:call GoBack()<CR>
+-- vim.api.nvim_set_keymap('n', '<Leader>]', ':lua vim.lsp.util.jump_forward()<CR>', { noremap = true, silent = true })      --:call GoForward()<CR>
+vim.api.nvim_set_keymap('n', '<Leader>r', ':lua vim.lsp.buf.rename()<CR>', { noremap = true, silent = false })      --
+vim.api.nvim_set_keymap('n', '<C-l>', ':lua vim.lsp.buf.format()<CR>', { noremap = true, silent = false})      --
+vim.api.nvim_set_keymap('n', '<Tab>', ':lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = false })      --
+vim.api.nvim_set_keymap('n', '<A-}>', ':lua vim.lsp.buf.incoming_calls()<CR>', { noremap = true, silent = false })      --
+vim.api.nvim_set_keymap('n', '<A-{>', ':lua vim.lsp.buf.outgoing_calls()<CR>', { noremap = true, silent = false })      --
 
