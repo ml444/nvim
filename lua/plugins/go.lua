@@ -26,5 +26,5 @@ vim.api.nvim_set_keymap('n', 'gf', ':lua vim.lsp.buf.implementation()<CR>', { no
 vim.api.nvim_set_keymap('n', '<Leader>r', ':lua vim.lsp.buf.rename()<CR>', { noremap = true, silent = false })      --
 vim.api.nvim_set_keymap('n', '<C-l>', ':lua vim.lsp.buf.format()<CR>', { noremap = true, silent = false})      --
 vim.api.nvim_set_keymap('n', '<Tab>', ':lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = false })      --
-vim.api.nvim_set_keymap('n', '<{>', ':lua vim.lsp.buf.incoming_calls()<CR>', { noremap = true, silent = false })      --
-vim.api.nvim_set_keymap('n', '<}>', ':lua vim.lsp.buf.outgoing_calls()<CR>', { noremap = true, silent = false })      --
+vim.api.nvim_set_keymap('n', '<A-}>', ':lua vim.lsp.buf.incoming_calls()<CR>', { noremap = true, silent = false })      --
+vim.api.nvim_set_keymap('n', '<A-{>', ':lua vim.lsp.buf.outgoing_calls()<CR>', { noremap = true, silent = false })      --
