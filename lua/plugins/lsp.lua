@@ -13,6 +13,7 @@ require("mason-lspconfig").setup({
   ensure_installed = {
     "lua_ls",
     "gopls",
+    "bufls",
   },
 })
 
@@ -28,6 +29,10 @@ require("lspconfig").gopls.setup {
       usePlaceholders = true,
     },
   },
+}
+require('lspconfig').bufls.setup {
+    -- cmd={ "bufls", "serve" },
+    -- filetypes={"proto"},
 }
 
 
