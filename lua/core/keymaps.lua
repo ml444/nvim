@@ -26,7 +26,7 @@ keymap.set('i', '<S-Tab>', '<C-O><C-W>W')       -- 切换上个窗口
 
 
 -- 取消高亮 
-keymap.set("n", "<leader>nh", ":nohl<CR>")
+keymap.set("n", "<leader>h", ":nohl<CR>")
 
 -- 切换buffer
 keymap.set("n", "<leader>]", ":bnext<CR>")
