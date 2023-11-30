@@ -39,6 +39,12 @@ keymap.set("n", "<F6>", ":NvimTreeToggle<CR>")
 keymap.set('n', '<leader>0', '<CMD>tablast<CR>')
 keymap.set('n', '<leader>dd', ':%bdelete<CR>')
 
+-- =========== bufferline ===========
+-- nnoremap <silent> gb :BufferLinePick<CR>
+vim.api.nvim_set_keymap('n', '<leader>b', ':BufferLinePick<CR>', { noremap = true, silent = true })      
+-- nnoremap <silent> gD :BufferLinePickClose<CR>
+vim.api.nvim_set_keymap('n', 'gB', ':BufferLinePickClose<CR>', { noremap = true, silent = true })      
+
 -- keymap.set("n", "<leader>t", ":terminal<CR>i")
 
 -- =========== LSP ===========
