@@ -41,9 +41,9 @@ keymap.set('n', '<leader>dd', ':%bdelete<CR>')
 
 -- =========== bufferline ===========
 -- nnoremap <silent> gb :BufferLinePick<CR>
-vim.api.nvim_set_keymap('n', '<leader>b', ':BufferLinePick<CR>', { noremap = true, silent = true })      
+vim.api.nvim_set_keymap('n', 'bp', ':BufferLinePick<CR>', { noremap = true, silent = true })      --:call GoDef()<CR>
 -- nnoremap <silent> gD :BufferLinePickClose<CR>
-vim.api.nvim_set_keymap('n', 'gB', ':BufferLinePickClose<CR>', { noremap = true, silent = true })      
+vim.api.nvim_set_keymap('n', 'bc', ':BufferLinePickClose<CR>', { noremap = true, silent = true })      --:call GoDef()<CR>
 
 -- keymap.set("n", "<leader>t", ":terminal<CR>i")
 

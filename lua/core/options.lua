@@ -1,7 +1,7 @@
 local opt = vim.opt
 
 -- timeout
-opt.timeoutlen = 200
+opt.timeoutlen = 400
 
 -- 行号
 opt.relativenumber = true
@@ -14,7 +14,7 @@ opt.expandtab = true
 opt.autoindent = true
 
 -- 防止包裹
-opt.wrap = true     -- 字符串自动换行
+opt.wrap = true -- 字符串自动换行
 
 -- 光标行
 opt.cursorline = true
@@ -32,14 +32,14 @@ opt.splitbelow = true
 
 -- 搜索
 opt.incsearch = true
-opt.ignorecase = true   -- 搜索时忽略大小写
-opt.smartcase = true    -- 若搜索内容中有大写字母，则不再忽略大小写
+opt.ignorecase = true -- 搜索时忽略大小写
+opt.smartcase = true  -- 若搜索内容中有大写字母，则不再忽略大小写
 
 
 -- 外观
 opt.termguicolors = true
 opt.signcolumn = "yes"
-vim.cmd[[colorscheme tokyonight-moon]]
+vim.cmd [[colorscheme tokyonight-moon]]
 
 -- ============= 折叠fold ================
 --[[
@@ -57,13 +57,14 @@ vim.cmd[[colorscheme tokyonight-moon]]
 "zn	禁用折叠
 "zN	启用折叠
 --]]
-opt.foldmethod="indent" -- 代码折叠: indent|syntax
-opt.foldcolumn="0"	      -- 折叠区域的宽度
-opt.foldlevelstart=99	-- 打开文件默认不折叠代码
+opt.foldmethod = "indent" -- 代码折叠: indent|syntax
+opt.foldcolumn = "0"    -- 折叠区域的宽度
+opt.foldlevelstart = 99 -- 打开文件默认不折叠代码
 -- setlocal foldlevel=1	-- 折叠层数
 
 
 -- set paste             "设置粘贴模式
+--
 
 -- 重新打开缓冲区恢复光标位置:
 vim.api.nvim_create_autocmd("BufReadPost", {
