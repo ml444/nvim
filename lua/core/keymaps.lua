@@ -2,6 +2,13 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
+-- =========== 保存==============
+-- nmap <C-S> :w!<CR>i
+-- vmap <C-S> <C-C>:w!<CR>
+-- imap <C-S> <Esc>:w!<CR>i
+keymap.set("i", "<C-s>", "<Esc>:w!<CR>i")
+keymap.set("n", "<C-s>", ":w!<CR>")
+
 -- ---------- 插入模式 ---------- ---
 keymap.set("i", "jk", "<ESC>")
 keymap.set("i", "<S-Enter>", "<ESC>o")

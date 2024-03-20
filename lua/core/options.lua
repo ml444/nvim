@@ -78,8 +78,37 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 })
 
 -- 自动保存编辑的缓冲区：
-vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
+vim.api.nvim_create_autocmd({"InsertLeave" }, {
     pattern = { "*" },
-    command = "silent! wall",
+    command = "redraw | sleep 10m | silent! wall",
     nested = true,
 })
+-- vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
+--     pattern = { "*" },
+--     command = "redraw | sleep 10m | silent! wall",
+--     nested = true,
+-- })
+
+-- vim.api.nvim_exec([[
+--   function! AutoSaveFunc()
+--     if &modified
+--       redraw
+--       sleep 2000m
+--       silent! write
+--     endif
+--   endfunction
+--
+--   augroup AutoSave
+--     autocmd!
+--     autocmd InsertLeave,TextChanged <buffer> call AutoSaveFunc()
+--   augroup END
+-- ]], true)
+
+
+-- " Convenient command to see the difference between the current buffer and the
+-- " file it was loaded from, thus the changes you made.
+-- " Only define it when not defined already.
+-- if !exists(":DiffOrig")
+--   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+-- 	\ | wincmd p | diffthis
+-- endif
