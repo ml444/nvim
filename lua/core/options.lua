@@ -80,7 +80,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 -- 自动保存编辑的缓冲区：
 vim.api.nvim_create_autocmd({"InsertLeave" }, {
     pattern = { "*" },
-    command = "redraw | sleep 10m | silent! wall",
+    command = "redraw | silent! wall",
     nested = true,
 })
 -- vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {

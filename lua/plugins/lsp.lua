@@ -57,7 +57,9 @@ require('lspconfig').bufls.setup {
     filetypes = { "proto" },
 }
 
-require('lspconfig').pyright.setup{}
+require('lspconfig').pyright.setup{
+    capabilities = capabilities,
+}
 
 -- require("mason-lspconfig").setup_handlers({
 --   function (server_name)
