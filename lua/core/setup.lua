@@ -124,6 +124,7 @@ local plugins = {
     },
 
     "hrsh7th/cmp-path",      -- 文件路径
+    { "folke/neodev.nvim", opts = {} },
 
     "numToStr/Comment.nvim", -- gcc和gc注释
     "windwp/nvim-autopairs", -- 自动补全括号
@@ -216,6 +217,7 @@ local plugins = {
             "ray-x/guihua.lua",
             "neovim/nvim-lspconfig",
             "nvim-treesitter/nvim-treesitter",
+            -- "mfussenegger/nvim-dap",
         },
         config = function()
             require("go").setup()
@@ -224,6 +226,7 @@ local plugins = {
         ft = { "go", 'gomod' },
         build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
     },
+    { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} },
     {
         "iamcco/markdown-preview.nvim",
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
