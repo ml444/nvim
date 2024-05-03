@@ -19,6 +19,7 @@ require("mason-lspconfig").setup({
         "clangd",
         "cmake",
         "pyright",
+        "tsserver",
         -- "golangci-lint",
         -- "golangci-lint-langserver",
         -- "json-lsp",
@@ -47,10 +48,6 @@ require("lspconfig").gopls.setup {
         },
     },
 }
-require('lspconfig').bufls.setup {
-    -- cmd={ "bufls", "serve" },
-    -- filetypes={"proto"},
-}
 
 require('lspconfig').bufls.setup {
     cmd = { "bufls", "serve" },
@@ -60,6 +57,8 @@ require('lspconfig').bufls.setup {
 require('lspconfig').pyright.setup{
     capabilities = capabilities,
 }
+
+require'lspconfig'.tsserver.setup{}
 
 -- require("mason-lspconfig").setup_handlers({
 --   function (server_name)

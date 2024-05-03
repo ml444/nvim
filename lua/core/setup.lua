@@ -123,8 +123,8 @@ local plugins = {
         -- end
     },
 
-    "hrsh7th/cmp-path",      -- 文件路径
-    { "folke/neodev.nvim", opts = {} },
+    "hrsh7th/cmp-path", -- 文件路径
+    { "folke/neodev.nvim",   opts = {} },
 
     "numToStr/Comment.nvim", -- gcc和gc注释
     "windwp/nvim-autopairs", -- 自动补全括号
@@ -142,7 +142,7 @@ local plugins = {
     },
     -- AI
     "zhenyangze/vim-bitoai",
-    { 'codota/tabnine-nvim',     build = "./dl_binaries.sh" },
+    { 'codota/tabnine-nvim', build = "./dl_binaries.sh" },
 
     -- {
     --     'nvim-telescope/telescope.nvim',
@@ -180,7 +180,7 @@ local plugins = {
         end
     },
 
-    { 'akinsho/toggleterm.nvim', version = "*",             config = true },
+    { 'akinsho/toggleterm.nvim', version = "*",                                                      config = true },
 
     {
         'goolord/alpha-nvim',
@@ -226,7 +226,7 @@ local plugins = {
         ft = { "go", 'gomod' },
         build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
     },
-    { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} },
+    { "rcarriga/nvim-dap-ui",    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
     {
         "iamcco/markdown-preview.nvim",
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -241,6 +241,29 @@ local plugins = {
             -- calling `setup` is optional for customization
             require("fzf-lua").setup({})
         end
+    },
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- add any options here
+        },
+        dependencies = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+            "rcarriga/nvim-notify",
+        }
+    },
+    {
+        "folke/trouble.nvim",
+        lazy = true,
+        cmd = { "TroubleToggle", "Trouble", "TroubleRefresh" },
+        config = function()
+            require("trouble").setup()
+        end,
     },
 
 }
