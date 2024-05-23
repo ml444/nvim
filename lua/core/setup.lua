@@ -220,7 +220,9 @@ local plugins = {
             -- "mfussenegger/nvim-dap",
         },
         config = function()
-            require("go").setup()
+            require("go").setup({
+                lsp_keymaps = false
+            })
         end,
         event = { "CmdlineEnter" },
         ft = { "go", 'gomod' },
