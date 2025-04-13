@@ -13,13 +13,13 @@ require("mason-lspconfig").setup({
     ensure_installed = {
         "lua_ls",
         "gopls",
-        "bufls",
-        "bashls",
+        "buf_ls",
+        "bash_ls",
         "jdtls",
         "clangd",
         "cmake",
         "pyright",
-        "tsserver",
+        "ts_ls",
         -- "golangci-lint",
         -- "golangci-lint-langserver",
         -- "json-lsp",
@@ -42,23 +42,33 @@ require("lspconfig").lua_ls.setup {
 }
 
 require("lspconfig").gopls.setup {
+    cmd = { "~/go/bin/gopls" },  -- 指定 gopls 命令
+    filetypes = { "go", "gomod", "gowork", "gotmpl" },  -- 适用于 Go 相关文件
+    root_dir = require("lspconfig.util").root_pattern("go.work", "go.mod", ".git"),
     settings = {
         gopls = {
-            usePlaceholders = true,
+            usePlaceholders = true,  -- 启用占位符
+            completeUnimported = true,  -- 自动补全未导入的包
+            analyses = {
+                unusedparams = true,  -- 检查未使用的参数
+                shadow = true,  -- 变量遮蔽检测
+            },
+            staticcheck = true,  -- 启用静态分析（类似 golangci-lint）
+            matcher = "Fuzzy",  -- 启用模糊匹配补全
         },
     },
 }
 
-require('lspconfig').bufls.setup {
+require('lspconfig').buf_ls.setup {
     cmd = { "bufls", "serve" },
     filetypes = { "proto" },
 }
 
-require('lspconfig').pyright.setup{
+require('lspconfig').pyright.setup {
     capabilities = capabilities,
 }
 
-require'lspconfig'.tsserver.setup{}
+require 'lspconfig'.ts_ls.setup {}
 
 -- require("mason-lspconfig").setup_handlers({
 --   function (server_name)
