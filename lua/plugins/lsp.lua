@@ -11,9 +11,9 @@ require("mason").setup({
 require("mason-lspconfig").setup({
     -- 确保安装，根据需要填写
     ensure_installed = {
-        "lua_ls",
+        "lua",
         "gopls",
-        "buf_ls",
+        "buf",
         "bash_ls",
         "jdtls",
         "clangd",
@@ -60,7 +60,7 @@ require("lspconfig").gopls.setup {
 }
 
 require('lspconfig').buf_ls.setup {
-    cmd = { "bufls", "serve" },
+    cmd = { "buf", "beta", "lsp" },
     filetypes = { "proto" },
 }
 
