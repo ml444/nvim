@@ -48,9 +48,18 @@ keymap.set('n', '<leader>dd', ':%bdelete<CR>')
 
 -- =========== bufferline ===========
 -- nnoremap <silent> gb :BufferLinePick<CR>
-vim.api.nvim_set_keymap('n', 'bp', ':BufferLinePick<CR>', { noremap = true, silent = true })      --:call GoDef()<CR>
+vim.api.nvim_set_keymap('n', 'bp', ':BufferLinePick<CR>', { noremap = true, silent = true })
 -- nnoremap <silent> gD :BufferLinePickClose<CR>
-vim.api.nvim_set_keymap('n', 'bc', ':BufferLinePickClose<CR>', { noremap = true, silent = true }) --:call GoDef()<CR>
+vim.api.nvim_set_keymap('n', 'bc', ':BufferLinePickClose<CR>', { noremap = true, silent = true })
+
+-- " VimScript 版本
+-- nnoremap <leader>ba :bufdo bd<CR>
+vim.keymap.set("n", "<leader>ba", ":bufdo bd<CR>", { desc = "Close all buffers" })
+
+-- 保留当前 buffer，关闭其他所有 buffer
+-- nnoremap <leader>bo :%bdelete\|edit #\|bdelete #<CR>
+vim.keymap.set("n", "<leader>bo", ":%bdelete | edit # | bdelete #", { desc = "Close other buffers" })
+
 
 -- keymap.set("n", "<leader>t", ":terminal<CR>i")
 

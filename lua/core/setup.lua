@@ -52,13 +52,13 @@ local plugins = {
     },
 
     -- "L3MON4D3/LuaSnip", -- snippets引擎，不装这个自动补全会出问题
-    {
-        "L3MON4D3/LuaSnip",
-        event = "VeryLazy",
-        config = function()
-            require("luasnip.loaders.from_lua").load({ paths = "./snippets" })
-        end
-    },
+    -- {
+    --     "L3MON4D3/LuaSnip",
+    --     event = "VeryLazy",
+    --     config = function()
+    --         require("luasnip.loaders.from_lua").load({ paths = "./snippets" })
+    --     end
+    -- },
     -- 自动补全
     -- "hrsh7th/nvim-cmp",
     -- "hrsh7th/cmp-nvim-lsp",

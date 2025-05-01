@@ -8,7 +8,8 @@ if not snip_status_ok then
   return
 end
 
-require("luasnip.loaders.from_vscode").lazy_load()
+-- require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_lua").lazy_load({ paths = {"~/.config/nvim/lua/snippets"} })
 
 -- 下面会用到这个函数
 local check_backspace = function()
@@ -23,6 +24,9 @@ cmp.setup({
       require('luasnip').lsp_expand(args.body)
     end,
   },
+  -- completion = {
+  --     autocomplete = false
+  -- },
   mapping = cmp.mapping.preset.insert({
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -62,8 +66,8 @@ cmp.setup({
 
   -- 这里重要
   sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = 'nvim_lsp' },
     { name = 'path' },
   }, {
     { name = 'buffer' },
